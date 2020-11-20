@@ -37,7 +37,23 @@ for number in range(1, nr_numbers + 1):
   password += selected_number
   # print(password)
 
-print(password)
+password
+print("Generated logical password:", password)
 
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+
+password_length = len(password)
+counter = 0
+new_password_list = []
+# seperating each digit in the string into a seperate list elements with will be inserted into the "new_password_list" empty list above 
+for passlist in range(1, password_length + 1):
+  new_password_list += password[counter]
+  counter += 1
+
+# shuffling the end new_password_list in order to randamize the digits in the password 
+random.shuffle(new_password_list)
+# combining all the list elements into a string without any spaces in between 
+new_password = "".join(new_password_list)
+
+print("Your new password is:", new_password)
